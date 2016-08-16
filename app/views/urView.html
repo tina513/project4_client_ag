@@ -1,0 +1,127 @@
+<div class="recipe-content">
+    <div>
+        <div class="col-sm-2 sidebar-content">
+            <nav class="nav-sidebar">
+                <h4>Category</h4>
+                <ul class="nav tabs">
+                    <li ng-class="{'active' : activeTab == 6}"><a href="" ng-click="setActiveTab(6)">Grill</a></li>
+                    <li ng-class="{'active' : activeTab == 7}"><a href="" ng-click="setActiveTab(7)">Fry</a></li>
+                    <li ng-class="{'active' : activeTab == 8}"><a href="" ng-click="setActiveTab(8)">Bake</a></li>
+                    <li ng-class="{'active' : activeTab == 9}"><a href="" ng-click="setActiveTab(9)">Stir-Fry</a></li>
+                    <li ng-class="{'active' : activeTab == 10}"><a href="" ng-click="setActiveTab(10)">Steam</a></li>
+                    <li ng-class="{'active' : activeTab == 11}"><a href="" ng-click="setActiveTab(11)">Favorite Collection</a></li>
+                    <li ng-class="{'active' : activeTab == 12}"><a href="" ng-click="setActiveTab(12)">Make Recipes</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="tab-content">
+            <div ng-class="{'tab-pane active': activeTab === 6, 'tab-pane' : activeTab !== 6}">
+                <h2>Grill Recipe</h2>
+                <hr>
+                <div>
+                    <table>
+                        <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Grill'}">
+                            <td>{{ recipe.name }}</td>
+                            <td>{{ recipe.category}}</td>
+                            <td>{{ recipe.ingredients }}</td>
+                            <td>{{ recipe.instructions }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-class="{'tab-pane active': activeTab === 7, 'tab-pane' : activeTab !== 7}">
+                <h2>Fry Recipe</h2>
+                <hr>
+                <div>
+                    <table>
+                        <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Fry'}">
+                            <td>{{ recipe.name }}</td>
+                            <td>{{ recipe.category}}</td>
+                            <td>{{ recipe.ingredients }}</td>
+                            <td>{{ recipe.instructions }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-class="{'tab-pane active': activeTab === 8, 'tab-pane' : activeTab !== 8}">
+                <h2>Bake Recipe</h2>
+                <hr>
+                <div>
+                    <table>
+                        <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Bake'}">
+                            <td>{{ recipe.name }}</td>
+                            <td>{{ recipe.category}}</td>
+                            <td>{{ recipe.ingredients }}</td>
+                            <td>{{ recipe.instructions }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-class="{'tab-pane active': activeTab === 9, 'tab-pane' : activeTab !== 9}">
+                <h2>Stir-Fry Recipe</h2>
+                <hr>
+                <div>
+                    <table>
+                        <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Stir-fry'}">
+                            <td>{{ recipe.name }}</td>
+                            <td>{{ recipe.category}}</td>
+                            <td>{{ recipe.ingredients }}</td>
+                            <td>{{ recipe.instructions }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-class="{'tab-pane active': activeTab === 10, 'tab-pane' : activeTab !== 10}">
+                <h2>Steam Recipe</h2>
+                <hr>
+                <div>
+                    <table>
+                        <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Steam'}">
+                            <td>{{ recipe.name }}</td>
+                            <td>{{ recipe.category}}</td>
+                            <td>{{ recipe.ingredients }}</td>
+                            <td>{{ recipe.instructions }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-class="{'tab-pane active': activeTab === 11, 'tab-pane' : activeTab !== 11}">
+                <h2>Your Favorite Recipes</h2>
+                <hr>
+                <div>
+                    <table>
+                        <tr ng-repeat="recipe in urCtrl.likeRecipes">
+                            <td>{{ recipe.name }}</td>
+                            <td>{{ recipe.category}}</td>
+                            <td>{{ recipe.ingredients }}</td>
+                            <td>{{ recipe.instructions }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div ng-class="{'tab-pane active': activeTab === 12, 'tab-pane' : activeTab !== 12}">
+                <h2>Make Recipes</h2>
+                <hr>
+                <div>
+                    <form>
+                        <input type='text' ng-model='urCtrl.recipe.name' placeholder='recipe name'>
+                        <input type='text' ng-model='urCtrl.recipe.category' placeholder='cooking method'>
+                        <input ng-repeat="ingredient in urCtrl.recipe.ingredients track by $index" type='text' ng-model='urCtrl.recipe.ingredients[$index]' placeholder='ingredients'>
+                        <input ng-repeat="instruction in urCtrl.recipe.instructions track by $index" type='text' ng-model='urCtrl.recipe.instructions[$index]' placeholder='instructions'>
+                        <div>
+                            <button type='submit' ng-click="urCtrl.submitRecipe()">Submit</button>
+                            <button ng-click="urCtrl.addFormFieldforIngredients()">Add Ingredients</button>
+                            <button ng-click="urCtrl.addFormFieldforInstructions()">Add Instructions</button>
+                        </div>
+                        <pre>{{ urCtrl.recipe | json }}</pre>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="recipesApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/simpleStorage/simpleStorage.js"></script>
+
+
+    <script src='app/app.js'></script>
+    <script src='app/services/values.js'></script>
+    <script src='app/services/userFactory.js'></script>
+    <script src='app/services/likeRecipesFactory.js'></script>
+    <script src='app/services/recipesFactory.js'></script>
+    <script src='app/controllers/signUpController.js'></script>
+    <script src='app/controllers/logInController.js'></script>
+    <script src='app/controllers/logOutController.js'></script>
+    <script src='app/controllers/cpController.js'></script>
+    <script src='app/controllers/mainController.js'></script>
+    <script src='app/controllers/userRecipeController.js'></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container col-xs-12">
+            <div class="col-xs-3">
+                <h4>Recipe House</h4>
+            </div>
+            <div id="custom-search-input" class="col-xs-3">
+                <div class="input-group col-xs-8">
+                    <input type="text" class="form-control input-sm" ng-model="recipeFilter.name" placeholder="search for recipe" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-sm" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <button type="button" class="btn btn-primary hidden" id="homeButton"><a href="#/">Home</a></button>
+                <button type="button" id="userButton" class="btn btn-primary hidden"><a href="#/user">User</a></button>
+                <button type="button" class="btn btn-primary"><a href="#/signup" id="signUp-button">Sign Up</a></button>
+                <button type="button" class="btn btn-primary"><a href="#/login" id="logIn-button">Log In</a></button>
+                <button type="button" class="btn btn-primary hidden"  id="logOutButton"><a href="#/logout">Log Out</a></button>
+            </div>
+        </div>
+    </nav>
+
+    <div ng-view class="bodyDiv"></div>
+</body>
+
+</html>

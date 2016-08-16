@@ -1,0 +1,11 @@
+<div class="container marketing">
+	<div class="col-md-4 center">
+   <form class="form-cp">
+     <h2 class="form-cp-heading">Change Password</h2>
+     <!-- <label for="inputEmail" class="sr-only">Email address</label> -->
+     <input ng-model="cpCtrl.oldP" id="oldPassword" type="password" class="form-control" placeholder="Old Password"><br>
+     <input ng-model="cpCtrl.newP" id="newPassword" type="password" class="form-control" placeholder="New Password"><br>
+     <button ng-click="cpCtrl.logIn(cpCtrl.oldP, cpCtrl.newP)" id="changePassword" class="btn btn-md btn-info" type="button">Submit</button>
+   </form>
+	</div>
+</div>
