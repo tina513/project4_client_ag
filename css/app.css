@@ -1,3 +1,31 @@
 .bodyDiv {
- margin-top: 100px;  
+    margin-top: 100px;
+}
+#makeRecipeHeader {
+    float: left;
+    margin-top: -2px;
+}
+.make-recipe-button {
+    float: right;
+    margin: 5px;
+}
+#make-recipe-hr {
+    clear: right;
+}
+.grid-divider {
+    position: relative;
+    padding: 0;
+}
+.grid-divider>[class*='col-'] {
+    position: static;
+}
+.grid-divider>[class*='col-']:nth-child(n+2):before {
+    content: "";
+    border-left: 1px solid #DDD;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.col-padding {
+    padding: 0 15px;
 }

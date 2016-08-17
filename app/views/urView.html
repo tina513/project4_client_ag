@@ -19,21 +19,31 @@
             <div ng-class="{'tab-pane active': activeTab === 6, 'tab-pane' : activeTab !== 6}">
                 <h2>Grill Recipe</h2>
                 <hr>
-                <div>
-                    <table>
-                        <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Grill'}">
-                            <td>{{ recipe.name }}</td>
-                            <td>{{ recipe.category}}</td>
-                            <td>{{ recipe.ingredients }}</td>
-                            <td>{{ recipe.instructions }}</td>
-                        </tr>
-                    </table>
+                <div ng-controller="userRecipeController">
+                    <ul ng-repeat="recipe in userRecipes | filter: {category: 'Grill'}">
+                        <li>{{ recipe.id }}</li>
+                        <li>{{ recipe.name }}</li>
+                        <li>{{ recipe.category}}</li>
+                        <li>{{ recipe.ingredients }}</li>
+                        <li>{{ recipe.instructions }}</li>
+                        <button ng-click="deleteRecipe(recipe)">Delete</button>
+                    </ul>
                 </div>
             </div>
             <div ng-class="{'tab-pane active': activeTab === 7, 'tab-pane' : activeTab !== 7}">
                 <h2>Fry Recipe</h2>
                 <hr>
-                <div>
+                <div ng-controller="userRecipeController">
+                    <ul ng-repeat="recipe in userRecipes | filter: {category: 'Fry'}">
+                        <li>{{ recipe.id }}</li>
+                        <li>{{ recipe.name }}</li>
+                        <li>{{ recipe.category}}</li>
+                        <li>{{ recipe.ingredients }}</li>
+                        <li>{{ recipe.instructions }}</li>
+                        <button ng-click="deleteRecipe(recipe)">Delete</button>
+                    </ul>
+                </div>
+                <!-- <div>
                     <table>
                         <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Fry'}">
                             <td>{{ recipe.name }}</td>
@@ -42,12 +52,22 @@
                             <td>{{ recipe.instructions }}</td>
                         </tr>
                     </table>
-                </div>
+                </div> -->
             </div>
             <div ng-class="{'tab-pane active': activeTab === 8, 'tab-pane' : activeTab !== 8}">
                 <h2>Bake Recipe</h2>
                 <hr>
-                <div>
+                <div ng-controller="userRecipeController">
+                    <ul ng-repeat="recipe in userRecipes | filter: {category: 'Bake'}">
+                        <li>{{ recipe.id }}</li>
+                        <li>{{ recipe.name }}</li>
+                        <li>{{ recipe.category}}</li>
+                        <li>{{ recipe.ingredients }}</li>
+                        <li>{{ recipe.instructions }}</li>
+                        <button ng-click="deleteRecipe(recipe)">Delete</button>
+                    </ul>
+                </div>
+                <!-- <div>
                     <table>
                         <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Bake'}">
                             <td>{{ recipe.name }}</td>
@@ -56,12 +76,22 @@
                             <td>{{ recipe.instructions }}</td>
                         </tr>
                     </table>
-                </div>
+                </div> -->
             </div>
             <div ng-class="{'tab-pane active': activeTab === 9, 'tab-pane' : activeTab !== 9}">
                 <h2>Stir-Fry Recipe</h2>
                 <hr>
-                <div>
+                <div ng-controller="userRecipeController">
+                    <ul ng-repeat="recipe in userRecipes | filter: {category: 'Stir-Fry'}">
+                        <li>{{ recipe.id }}</li>
+                        <li>{{ recipe.name }}</li>
+                        <li>{{ recipe.category}}</li>
+                        <li>{{ recipe.ingredients }}</li>
+                        <li>{{ recipe.instructions }}</li>
+                        <button ng-click="deleteRecipe(recipe)">Delete</button>
+                    </ul>
+                </div>
+                <!-- <div>
                     <table>
                         <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Stir-fry'}">
                             <td>{{ recipe.name }}</td>
@@ -70,12 +100,22 @@
                             <td>{{ recipe.instructions }}</td>
                         </tr>
                     </table>
-                </div>
+                </div> -->
             </div>
             <div ng-class="{'tab-pane active': activeTab === 10, 'tab-pane' : activeTab !== 10}">
                 <h2>Steam Recipe</h2>
                 <hr>
-                <div>
+                <div ng-controller="userRecipeController">
+                    <ul ng-repeat="recipe in userRecipes | filter: {category: 'Steam'}">
+                        <li>{{ recipe.id }}</li>
+                        <li>{{ recipe.name }}</li>
+                        <li>{{ recipe.category}}</li>
+                        <li>{{ recipe.ingredients }}</li>
+                        <li>{{ recipe.instructions }}</li>
+                        <button ng-click="deleteRecipe(recipe)">Delete</button>
+                    </ul>
+                </div>
+                <!-- <div>
                     <table>
                         <tr ng-repeat="recipe in urCtrl.userRecipes | filter: {category: 'Steam'}">
                             <td>{{ recipe.name }}</td>
@@ -84,7 +124,7 @@
                             <td>{{ recipe.instructions }}</td>
                         </tr>
                     </table>
-                </div>
+                </div> -->
             </div>
             <div ng-class="{'tab-pane active': activeTab === 11, 'tab-pane' : activeTab !== 11}">
                 <h2>Your Favorite Recipes</h2>
@@ -102,20 +142,48 @@
             </div>
 
             <div ng-class="{'tab-pane active': activeTab === 12, 'tab-pane' : activeTab !== 12}">
-                <h2>Make Recipes</h2>
-                <hr>
+                <h2 id="makeRecipeHeader">Make Recipes</h2>
+                <!-- <hr> -->
                 <div>
-                    <form>
-                        <input type='text' ng-model='urCtrl.recipe.name' placeholder='recipe name'>
-                        <input type='text' ng-model='urCtrl.recipe.category' placeholder='cooking method'>
-                        <input ng-repeat="ingredient in urCtrl.recipe.ingredients track by $index" type='text' ng-model='urCtrl.recipe.ingredients[$index]' placeholder='ingredients'>
-                        <input ng-repeat="instruction in urCtrl.recipe.instructions track by $index" type='text' ng-model='urCtrl.recipe.instructions[$index]' placeholder='instructions'>
+                    <form class="form-horizontal">
                         <div>
-                            <button type='submit' ng-click="urCtrl.submitRecipe()">Submit</button>
-                            <button ng-click="urCtrl.addFormFieldforIngredients()">Add Ingredients</button>
-                            <button ng-click="urCtrl.addFormFieldforInstructions()">Add Instructions</button>
+                            <button class="btn btn-md btn-success make-recipe-button" type='submit' ng-click="urCtrl.submitRecipe()">Submit</button>
+                            <button class="btn btn-md btn-info make-recipe-button" ng-click="urCtrl.addFormFieldforInstructions()">Add Instructions</button>
+                            <button class="btn btn-md btn-info make-recipe-button" ng-click="urCtrl.addFormFieldforIngredients()">Add Ingredients</button>
+                            <hr id="make-recipe-hr">
                         </div>
-                        <pre>{{ urCtrl.recipe | json }}</pre>
+                        <div class="panel panel-info col-xs-10" style="width:83%">
+                            <div class="panel-body grid-divider">
+                                <div class="col-xs-3" style="margin-left:-35px;">
+                                    <div class="col-padding">
+                                        <h5>Recipe Name</h5>
+                                        <input type='text' ng-model='urCtrl.recipe.name' placeholder='recipe name'>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="col-padding">
+                                        <h5>Recipe Category</h5>
+                                        <input type='text' ng-model='urCtrl.recipe.category' placeholder='cooking method'>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="col-padding">
+                                        <h5>Recipe Ingredients</h5>
+                                        <input ng-repeat="ingredient in urCtrl.recipe.ingredients track by $index" type='text' ng-model='urCtrl.recipe.ingredients[$index]' placeholder='ingredients' style="margin-bottom: 5px;">
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="col-padding">
+                                        <h5>Recipe Instructions</h5>
+                                        <input ng-repeat="instruction in urCtrl.recipe.instructions track by $index" type='text' ng-model='urCtrl.recipe.instructions[$index]' placeholder='instructions' style="margin-bottom: 5px;">
+                                    </div>
+                                </div>
+                                <!-- <input id="focusedInput" type='text' ng-model='urCtrl.recipe.name' placeholder='recipe name'> -->
+                                <!-- <input id="focusedInput" type='text' ng-model='urCtrl.recipe.category' placeholder='cooking method'> -->
+                                <!-- <input id="focusedInput" ng-repeat="ingredient in urCtrl.recipe.ingredients track by $index" type='text' ng-model='urCtrl.recipe.ingredients[$index]' placeholder='ingredients'>
+                                <input id="focusedInput" ng-repeat="instruction in urCtrl.recipe.instructions track by $index" type='text' ng-model='urCtrl.recipe.instructions[$index]' placeholder='instructions'> -->
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

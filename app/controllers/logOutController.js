@@ -11,6 +11,8 @@
 			console.log("what's up?");
 			$('#userButton').addClass('hidden');
 			$('#homeButton').addClass('hidden');
+			$('#signUpButton').removeClass('hidden');
+			$('#logInButton').removeClass('hidden');
       // $('#login-button').removeClass('hide');
       $('#logOutButton').addClass('hidden');
     };

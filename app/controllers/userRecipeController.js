@@ -8,7 +8,7 @@
 
         // All the recipes;
         vm.likeRecipes = [];
-        vm.userRecipes = [];
+        $scope.userRecipes = [];
 
         function init() {
             // Init the recipes from the factory
@@ -39,7 +39,7 @@
                         var obj = recipeArr[i];
                         if (obj.user_id === userId) {
                             console.log("this is ", obj)
-                            vm.userRecipes.push(obj)
+                            $scope.userRecipes.push(obj)
                         }
                     }
                     // vm.userRecipes = result.data.recipes;
@@ -74,26 +74,21 @@
                         console.error(status);
                     });
             };
-            // recipesFactory.createRecipe(name, category, instructions, ingredients)
-            //     .then(function(result) {
-            //         console.log(result.data);
-            //         // $('#sign-up-button').addClass('hide');
-            //         // $('#log-in-button').addClass('hide');
-            //         // $('#sign-out-button').removeClass('hide');
-            //     }, function(data, status, headers, config) {
-            //         console.error(status);
-            //     });
+
+          // vm.recipeId = 0;
+          $scope.deleteRecipe = function(data){
+            console.log("this is recipe: ", data);
+          };
 
 
-        }
-
-
-        // vm.doSort = function(propName){
-        //   vm.sortBy = propName;
-        //   vm.reverse = !vm.reverse;
-        // };
+        };
 
         init();
+
+        // this.deleteRecipe = function(data){
+        //   console.log("this is recipe: ", data);
+        // };
+
 
     };
 

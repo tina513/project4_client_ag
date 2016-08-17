@@ -18,6 +18,8 @@
         $('#userButton').removeClass('hidden');
 				$('#homeButton').removeClass('hidden');
 				$('#logOutButton').removeClass('hidden');
+				$('#signUpButton').addClass('hidden');
+				$('#logInButton').addClass('hidden');
 				// $('#sign-out-button').removeClass('hide');
 			}, function(data, status, headers, config) {
 				console.error(status);
