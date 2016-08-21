@@ -36,6 +36,13 @@ body {
     padding: 0 15px;
 }
 
+.alert {
+  float: right;
+  text-align: left;
+  margin-bottom: -10px;
+  font-size: 13px;
+}
+
 .btn-primary {
   float:right;
   margin: 2px;

@@ -2,6 +2,9 @@
 <html ng-app="recipesApp">
 
 <head>
+    <title>
+        Recipe House
+    </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
@@ -37,6 +40,11 @@
                 <h4 style="margin-right: 0.5em; margin-top: 1em;">Recipe House</h4>
                 <canvas id="myCanvas" width="50%" height="50%"></canvas>
             </div>
+            <div id="error-message" class="alert alert-dismissible alert-danger col-xs-2">
+                Please Sign In~
+                <br /> Email: test@test.com
+                <br /> Password: test
+            </div>
             <div class="col-xs-4" style="float: right">
                 <button type="button" class="btn btn-primary hidden" id="logOutButton"><a href="#/logout">Log Out</a></button>
                 <button type="button" id="userButton" class="btn btn-primary hidden"><a href="#/user">User</a></button>
@@ -51,62 +59,13 @@
 
     <script type="text/javascript" src="js/paper.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-      var unit = 0.35;
-            var bowl = new Path.Arc({
-                from: [view.center.x - 50*unit, view.center.y],
-                through: [view.center.x, view.center.y + 50*unit],
-                to: [view.center.x + 50*unit, view.center.y],
-                strokeColor: '#B3B2AD',
-                fillColor: '#E6F7FC'
-            });
-            bowl.closed = true;
-
-            var spine = new Path({
-                x: view.center.x - 50*unit,
-                y: view.center.y - 40*unit
-            });
-            spine.add({
-                x: view.center.x - 30*unit,
-                y: view.center.y + 30*unit
-            });
-            spine.strokeColor = '#6EF5BF';
-            spine.strokeWidth = 2;
-
-
-            var innerItem = new Path.Arc({
-                from: [view.center.x - 40*unit, view.center.y + 30*unit],
-                through: [view.center.x, view.center.y + 50*unit],
-                to: [view.center.x + 40*unit, view.center.y + 30*unit],
-                strokeColor: '#EDE73B',
-                fillColor: '#EDE73B'
-            });
-            innerItem.closed = true;
-
-
-            var amount = 3;
-            var height = 5*unit;
-            var wave = new Path();
-            wave.add(view.center.x - 40*unit, view.center.y + 30*unit);
-            wave.add(view.center.x - 20*unit, view.center.y + 30*unit);
-            wave.add(view.center.x - 5*unit, view.center.y + 30*unit);
-            wave.add(view.center.x + 20*unit, view.center.y + 30*unit);
-            wave.add(view.center.x + 40*unit, view.center.y + 30*unit);
-
-            wave.fillColor = '#EDE73B';
-
-            var group = new Group();
-            var stir = new Path()
-
-            view.onFrame = function(event) {
-                for (var i = 1; i <= amount; i++) {
-                    var segment = wave.segments[i];
-                    var sinus = Math.sin(event.time * 4 + i);
-                    segment.point.y = sinus * height*unit + 100*unit;
-                };
-                var sinus = Math.sin(event.time * 2) * 0.7;
-                spine.segments[1].point.x += sinus*unit;
-            };
-    </script>
+        var unit = 0.35; var bowl = new Path.Arc({ from: [view.center.x - 50*unit, view.center.y], through: [view.center.x, view.center.y + 50*unit], to: [view.center.x + 50*unit, view.center.y], strokeColor: '#B3B2AD', fillColor: '#E6F7FC' }); bowl.closed =
+        true; var spine = new Path({ x: view.center.x - 50*unit, y: view.center.y - 40*unit }); spine.add({ x: view.center.x - 30*unit, y: view.center.y + 30*unit }); spine.strokeColor = '#6EF5BF'; spine.strokeWidth = 2; var innerItem = new Path.Arc({
+        from: [view.center.x - 40*unit, view.center.y + 30*unit], through: [view.center.x, view.center.y + 50*unit], to: [view.center.x + 40*unit, view.center.y + 30*unit], strokeColor: '#EDE73B', fillColor: '#EDE73B' }); innerItem.closed = true; var
+        amount = 3; var height = 5*unit; var wave = new Path(); wave.add(view.center.x - 40*unit, view.center.y + 30*unit); wave.add(view.center.x - 20*unit, view.center.y + 30*unit); wave.add(view.center.x - 5*unit, view.center.y + 30*unit); wave.add(view.center.x
+        + 20*unit, view.center.y + 30*unit); wave.add(view.center.x + 40*unit, view.center.y + 30*unit); wave.fillColor = '#EDE73B'; var group = new Group(); var stir = new Path() view.onFrame = function(event) { for (var i = 1; i
+        <=a mount; i++)
+            { var segment=w ave.segments[i]; var sinus=M ath.sin(event.time * 4 + i); segment.point.y=s inus * height*unit + 100*unit; }; var sinus=M ath.sin(event.time * 2) * 0.7; spine.segments[1].point.x +=s inus*unit; }; </script>
 </body>
 
 </html>

@@ -18,6 +18,7 @@
 				$('#logOutButton').removeClass('hidden');
 				$('#signUpButton').addClass('hidden');
 				$('#logInButton').addClass('hidden');
+				$('#error-message').addClass('hidden');
 			}, function(data, status, headers, config) {
 				console.error(status);
 			});
