@@ -36,6 +36,15 @@ body {
     padding: 0 15px;
 }
 
+.error-message {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
+  background-color: #d61a5e;
+  margin-bottom: 3px;
+  padding-top: 5px;
+}
+
 .btn-primary {
   float:right;
   margin: 2px;
