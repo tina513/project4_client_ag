@@ -1,20 +1,26 @@
 (function recipesFactoryIIFE(){
 
-  // Create a recipes factory
+
   var recipesFactory = function($http){
     var recipesAPI = {};
+    var host = 'https://recipehouse.herokuapp.com';
+    // var host = 'http://localhost:3000';
 
     recipesAPI.getRecipes = function(){
-      // allow access to the list of recipes
-      return  $http.get('http://localhost:3000/recipes');
+
+      return  $http.get(host);
     };
 
     recipesAPI.getRecipe = function(recipeId){
-      return  $http.get('http://localhost:3000/recipes/' + recipeId);
+      return  $http.get(host+'/recipes/' + recipeId);
     };
 
     recipesAPI.createRecipe = function(data){
-      return $http.post('http://localhost:3000/recipes/', { 'recipe': data}, {headers: { 'Authorization': 'Token token=' + simpleStorage.get('token')}});
+      return $http.post(host+'/recipes/', { 'recipe': data}, {headers: { 'Authorization': 'Token token=' + simpleStorage.get('token')}});
+    };
+
+    recipesAPI.deleteRecipe = function(recipeId){
+      return $http.delete(host+'/recipes/' + recipeId, {headers: { Authorization: 'Token token=' + simpleStorage.get('token')}});
     };
 
     return recipesAPI;

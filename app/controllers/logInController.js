@@ -13,14 +13,11 @@
         simpleStorage.set('token', result.data.user.token);
 				simpleStorage.set('userId', result.data.user.id);
 				window.location.href = '#/user';
-        // $('#sign-up-button').addClass('hide');
-				// $('#log-in-button').addClass('hide');
         $('#userButton').removeClass('hidden');
 				$('#homeButton').removeClass('hidden');
 				$('#logOutButton').removeClass('hidden');
 				$('#signUpButton').addClass('hidden');
 				$('#logInButton').addClass('hidden');
-				// $('#sign-out-button').removeClass('hide');
 			}, function(data, status, headers, config) {
 				console.error(status);
 			});

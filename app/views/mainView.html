@@ -17,101 +17,138 @@
             <div class="tab-pane" id="tab1">
                 <h2>Grill Recipe</h2>
                 <hr>
-                <div>
-                    <table>
-                        <tr ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Grill'}">
-                            <td>{{ recipe.name }}</td>
-                            <td>{{ recipe.category}}</td>
-                            <td>{{ recipe.ingredients }}</td>
-                            <td>{{ recipe.instructions }}</td>
-                        </tr>
-                    </table>
-                </div>
+                <ul class="container col-xs-10" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Grill'}" class="col-xs-4" style="padding-left: 0px;">
+                        <div class="panel panel-info">
+                          <div class="panel-heading" style="background-color: #857E61;">
+                            <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
+                          </div>
+                          <div class="panel-body">
+                            <div>
+                                <h5 style="font-weight: bold;">Ingredients</h5>
+                                <ul>
+                                    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="font-weight: bold;">Instructions</h5>
+                                <ol>
+                                    <li ng-repeat="instruction in recipe.instructions">{{instruction}}</li>
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div class="tab-pane" id="tab2">
                 <h2>Fry Recipe</h2>
                 <hr>
-                <div>
-                    <table>
-                        <tr ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Fry'}">
-                            <td>{{ recipe.name }}</td>
-                            <td>{{ recipe.category}}</td>
-                            <td>{{ recipe.ingredients }}</td>
-                            <td>{{ recipe.instructions }}</td>
-                        </tr>
-                    </table>
-                </div>
+                <ul class="container col-xs-10" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Fry'}" class="col-xs-4" style="padding-left: 0px;">
+                        <div class="panel panel-info">
+                          <div class="panel-heading" style="background-color: #963484;">
+                            <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
+                          </div>
+                          <div class="panel-body">
+                            <div>
+                                <h5 style="font-weight: bold;">Ingredients</h5>
+                                <ul>
+                                    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="font-weight: bold;">Instructions</h5>
+                                <ol>
+                                    <li ng-repeat="instruction in recipe.instructions">{{instruction}}</li>
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div class="tab-pane text-style" id="tab3">
                 <h2>Bake Recipe</h2>
                 <hr>
-                <div>
-                    <table>
-                        <tr ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Bake'}">
-                            <td>{{ recipe.name }}</td>
-                            <td>{{ recipe.category}}</td>
-                            <td>{{ recipe.ingredients }}</td>
-                            <td>{{ recipe.instructions }}</td>
-                        </tr>
-                    </table>
-                </div>
+                <ul class="container col-xs-10" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Bake'}" class="col-xs-4" style="padding-left: 0px;">
+                        <div class="panel panel-info">
+                          <div class="panel-heading" style="background-color: #FCD0A1;">
+                            <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
+                          </div>
+                          <div class="panel-body">
+                            <div>
+                                <h5 style="font-weight: bold;">Ingredients</h5>
+                                <ul>
+                                    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="font-weight: bold;">Instructions</h5>
+                                <ol>
+                                    <li ng-repeat="instruction in recipe.instructions">{{instruction}}</li>
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div class="tab-pane text-style" id="tab4">
                 <h2>Stir-Fry Recipe</h2>
                 <hr>
-                <div>
-                    <table>
-                        <tr ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Stir-fry'}">
-                            <td>{{ recipe.name }}</td>
-                            <td>{{ recipe.category}}</td>
-                            <td>{{ recipe.ingredients }}</td>
-                            <td>{{ recipe.instructions }}</td>
-                        </tr>
-                    </table>
-                </div>
+                <ul class="container col-xs-10" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Stir-fry'}" class="col-xs-4" style="padding-left: 0px;">
+                        <div class="panel panel-info">
+                          <div class="panel-heading" style="background-color: #C1A5A9;">
+                            <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
+                          </div>
+                          <div class="panel-body">
+                            <div>
+                                <h5 style="font-weight: bold;">Ingredients</h5>
+                                <ul>
+                                    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="font-weight: bold;">Instructions</h5>
+                                <ol>
+                                    <li ng-repeat="instruction in recipe.instructions">{{instruction}}</li>
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div class="tab-pane text-style" id="tab5">
                 <h2>Steam Recipe</h2>
                 <hr>
-                <div>
-                    <table>
-                        <tr ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Steam'}">
-                            <td>{{ recipe.name }}</td>
-                            <td>{{ recipe.category}}</td>
-                            <td>{{ recipe.ingredients }}</td>
-                            <td>{{ recipe.instructions }}</td>
-                        </tr>
-                    </table>
-                </div>
+                <ul class="container col-xs-10" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Steam'}" class="col-xs-4" style="padding-left: 0px;">
+                        <div class="panel panel-info">
+                          <div class="panel-heading" style="background-color: #41EAD4;">
+                            <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
+                          </div>
+                          <div class="panel-body">
+                            <div>
+                                <h5 style="font-weight: bold;">Ingredients</h5>
+                                <ul>
+                                    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 style="font-weight: bold;">Instructions</h5>
+                                <ol>
+                                    <li ng-repeat="instruction in recipe.instructions">{{instruction}}</li>
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-
-
-
-<!-- Show all Recipes -->
-<!-- <hr>
-<br/>
-Filter: <input type="text" ng-model="recipeFilter.name"/>
-<br/>
-<table>
-  <tr>
-    <th ng-click="mainCtrl.doSort('name')">Name</th>
-    <th ng-click="mainCtrl.doSort('category')">Category</th>
-    <th ng-click="mainCtrl.doSort('ingredients')">Ingredients</th>
-    <th ng-click="mainCtrl.doSort('instructions')">Instructions</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr ng-repeat="recipe in mainCtrl.recipes | filter: recipeFilter | orderBy:mainCtrl.sortBy:mainCtrl.reverse">
-    <td>{{ recipe.name }}</td>
-    <td>{{ recipe.category}}</td>
-    <td>{{ recipe.ingredients }}</td>
-    <td>{{ recipe.instructions }}</td>
-  </tr>
-</table>
-<br/>
-<span>Total recipes: {{mainCtrl.recipes.length}}</span>
-<br/>
-<br/>
-<footer></footer> -->

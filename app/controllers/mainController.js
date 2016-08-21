@@ -3,15 +3,10 @@
   var MainController = function(recipesFactory, appSettings){
     var vm = this;
     vm.appSettings = appSettings;
-    // vm.sortBy = "name";
-    // vm.reverse = false;
 
-    // All the recipes;
     vm.recipes= [];
 
     function init(){
-      // Init the recipes from the factory
-      // Get all the recipes from the backend
       recipesFactory.getRecipes()
       .then(function(result){
         var userId = simpleStorage.get('userId');
@@ -23,17 +18,25 @@
             vm.recipes.push(obj)
           }
         }
-        // vm.recipes = result.data.recipes;
       }, function(data, status, headers, config){
         console.log("Error getting recipes from the remote api");
         alert("Error getting recipes from the remote api");
       });
-    }
 
-    // vm.doSort = function(propName){
-    //   vm.sortBy = propName;
-    //   vm.reverse = !vm.reverse;
-    // };
+      // $scope.addLikeRecipe = function(recipeId) {
+      //     console.log("this is recipe id: ", recipeId);
+      //     var userId = simpleStorage.get('userId');
+      //     console.log("this is user id: ", userId);
+      //     // likeRecipesFactory.createRecipe(recipeId, userId)
+      //     //     .then(function(result) {
+      //     //         console.log("success", result.data);
+      //     //     }, function(data, status, headers, config) {
+      //     //         console.error(status);
+      //     //     });
+      // };
+
+    };
+
 
     init();
 
@@ -41,7 +44,6 @@
 
  MainController.$inject = ['recipesFactory', 'appSettings'];
 
- // The Controller is part of the module.
  angular.module('recipesApp').controller('mainController', MainController);
 
 })();

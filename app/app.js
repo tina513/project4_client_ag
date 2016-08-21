@@ -16,10 +16,10 @@
                 controller: 'logInController as logInCtrl',
                 templateUrl: 'app/views/logInView.html'
             })
-            .when('/cp', {
-                controller: 'cpController as cpCtrl',
-                templateUrl: 'app/views/cpView.html'
-            })
+            // .when('/cp', {
+            //     controller: 'cpController as cpCtrl',
+            //     templateUrl: 'app/views/cpView.html'
+            // })
             .when('/logout', {
                 controller: 'logOutController as logOutCtrl',
                 templateUrl: 'app/views/logOutView.html'

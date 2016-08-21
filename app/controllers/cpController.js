@@ -10,11 +10,6 @@
 		this.changePassword = function(oldP, newP) {
 			userFactory.changePassword(oldP, newP)
 			.then(function(result) {
-				// window.location.href = '#/userShow';
-        // $('#sign-up-button').addClass('hide');
-				// $('#log-in-button').addClass('hide');
-        // $('#cp-button').removeClass('hide');
-				// $('#sign-out-button').removeClass('hide');
 			}, function(data, status, headers, config) {
 				console.error(status);
 			});

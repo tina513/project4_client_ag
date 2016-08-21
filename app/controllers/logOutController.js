@@ -13,7 +13,6 @@
 			$('#homeButton').addClass('hidden');
 			$('#signUpButton').removeClass('hidden');
 			$('#logInButton').removeClass('hidden');
-      // $('#login-button').removeClass('hide');
       $('#logOutButton').addClass('hidden');
     };
 
