@@ -30,6 +30,7 @@
                         $scope.userRecipes = [];
                         console.log('cleared');
                         var userId = simpleStorage.get('userId');
+                        console.log(result);
                         var recipeArr = result.data.recipes;
                         for (var i = 0; i < recipeArr.length; i++) {
                             var obj = recipeArr[i];

@@ -11,6 +11,7 @@
       .then(function(result){
         var userId = simpleStorage.get('userId');
         var recipeArr = result.data.recipes;
+        console.log("this is result", result.data);
         for(var i = 0; i < recipeArr.length; i++) {
           var obj = recipeArr[i];
           if (obj.user_id !== userId) {

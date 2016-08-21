@@ -3,10 +3,10 @@
   var likeRecipesFactory = function($http){
     var likeRecipesAPI = {};
     var host = 'https://recipehouse.herokuapp.com';
-    // var host = 'http://localhost:3000';
+     //var host = 'http://localhost:3000';
 
     likeRecipesAPI.getRecipes = function(){
-      return  $http.get(host);
+      return  $http.get(host+'/like_recipes/');
     };
 
     likeRecipesAPI.getRecipe = function(recipeId){

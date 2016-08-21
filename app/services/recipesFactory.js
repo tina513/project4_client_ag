@@ -4,11 +4,10 @@
   var recipesFactory = function($http){
     var recipesAPI = {};
     var host = 'https://recipehouse.herokuapp.com';
-    // var host = 'http://localhost:3000';
+    //var host = 'http://localhost:3000';
 
     recipesAPI.getRecipes = function(){
-
-      return  $http.get(host);
+      return  $http.get(host+'/recipes/');
     };
 
     recipesAPI.getRecipe = function(recipeId){
