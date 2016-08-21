@@ -14,7 +14,6 @@
 			$('#signUpButton').removeClass('hidden');
 			$('#logInButton').removeClass('hidden');
       $('#logOutButton').addClass('hidden');
-			$('#error-message').removeClass('hidden');
     };
 
     init();
