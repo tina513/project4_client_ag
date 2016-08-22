@@ -18,7 +18,7 @@
                 <h2>Grill Recipe</h2>
                 <hr>
                 <ul class="container col-xs-10" style="padding-left: 0px;">
-                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Grill'}" class="col-xs-4" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Grill'} : true" class="col-xs-4" style="padding-left: 0px;">
                         <div class="panel panel-info">
                           <div class="panel-heading" style="background-color: #857E61;">
                             <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -45,7 +45,7 @@
                 <h2>Fry Recipe</h2>
                 <hr>
                 <ul class="container col-xs-10" style="padding-left: 0px;">
-                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Fry'}" class="col-xs-4" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Fry'} : true" class="col-xs-4" style="padding-left: 0px;">
                         <div class="panel panel-info">
                           <div class="panel-heading" style="background-color: #963484;">
                             <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -72,7 +72,7 @@
                 <h2>Bake Recipe</h2>
                 <hr>
                 <ul class="container col-xs-10" style="padding-left: 0px;">
-                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Bake'}" class="col-xs-4" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Bake'} : true" class="col-xs-4" style="padding-left: 0px;">
                         <div class="panel panel-info">
                           <div class="panel-heading" style="background-color: #FCD0A1;">
                             <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -99,7 +99,7 @@
                 <h2>Stir-Fry Recipe</h2>
                 <hr>
                 <ul class="container col-xs-10" style="padding-left: 0px;">
-                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Stir-fry'}" class="col-xs-4" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Stir-fry'} : true" class="col-xs-4" style="padding-left: 0px;">
                         <div class="panel panel-info">
                           <div class="panel-heading" style="background-color: #C1A5A9;">
                             <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -126,7 +126,7 @@
                 <h2>Steam Recipe</h2>
                 <hr>
                 <ul class="container col-xs-10" style="padding-left: 0px;">
-                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Steam'}" class="col-xs-4" style="padding-left: 0px;">
+                    <li ng-repeat="recipe in mainCtrl.recipes | filter: {category: 'Steam'} : true" class="col-xs-4" style="padding-left: 0px;">
                         <div class="panel panel-info">
                           <div class="panel-heading" style="background-color: #41EAD4;">
                             <h4 style="font-family: 'Baloo Da';">{{recipe.name}}</h4>

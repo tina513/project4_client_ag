@@ -21,7 +21,7 @@
                 <hr>
                 <div ng-controller="userRecipeController" ng-init="initGet()">
                     <ul class="container col-xs-10" style="padding-left: 0px;">
-                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Grill'}" class="col-xs-4" style="padding-left: 0px;">
+                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Grill'} : true" class="col-xs-4" style="padding-left: 0px;">
                             <div class="panel panel-info">
                                 <div class="panel-heading" style="background-color: #857E61; display: flex;">
                                     <h4 class="col-xs-10" style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -51,7 +51,7 @@
                 <hr>
                 <div ng-controller="userRecipeController" ng-init="initGet()">
                     <ul class="container col-xs-10" style="padding-left: 0px;">
-                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Fry'}" class="col-xs-4" style="padding-left: 0px;">
+                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Fry'} : true" class="col-xs-4" style="padding-left: 0px;">
                             <div class="panel panel-info">
                                 <div class="panel-heading" style="background-color: #963484; display: flex;">
                                     <h4 class="col-xs-10" style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -81,7 +81,7 @@
                 <hr>
                 <div ng-controller="userRecipeController" ng-init="initGet()">
                     <ul class="container col-xs-10" style="padding-left: 0px;">
-                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Bake'}" class="col-xs-4" style="padding-left: 0px;">
+                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Bake'} : true" class="col-xs-4" style="padding-left: 0px;">
                             <div class="panel panel-info">
                                 <div class="panel-heading" style="background-color: #FCD0A1; display: flex;">
                                     <h4 class="col-xs-10" style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -111,7 +111,7 @@
                 <hr>
                 <div ng-controller="userRecipeController" ng-init="initGet()">
                     <ul class="container col-xs-10" style="padding-left: 0px;">
-                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Stir-Fry'}" class="col-xs-4" style="padding-left: 0px;">
+                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Stir-Fry'} : true" class="col-xs-4" style="padding-left: 0px;">
                             <div class="panel panel-info">
                                 <div class="panel-heading" style="background-color: #C1A5A9; display: flex;">
                                     <h4 class="col-xs-10" style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
@@ -141,7 +141,7 @@
                 <hr>
                 <div ng-controller="userRecipeController" ng-init="initGet()">
                     <ul class="container col-xs-10" style="padding-left: 0px;">
-                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Steam'}" class="col-xs-4" style="padding-left: 0px;">
+                        <li ng-repeat="recipe in userRecipes | filter: {category: 'Steam'} : true" class="col-xs-4" style="padding-left: 0px;">
                             <div class="panel panel-info">
                                 <div class="panel-heading" style="background-color: #41EAD4; display: flex;">
                                     <h4 class="col-xs-10" style="font-family: 'Baloo Da';">{{recipe.name}}</h4>
