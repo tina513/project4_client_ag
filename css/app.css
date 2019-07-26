@@ -65,3 +65,16 @@ ul.container {
   padding: 2px;
   padding-left: 15px;
 }
+
+button a,
+li a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.nav.tabs {
+    display: block;
+}
+
+.hidden { display: none!important;}
