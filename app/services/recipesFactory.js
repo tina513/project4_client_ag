@@ -7,19 +7,19 @@
     //var host = 'http://localhost:3000';
 
     recipesAPI.getRecipes = function(){
-      return  $http.get(host+'/recipes/');
+      return  $http.get(host+'/recipes/', { withCredentials: true });
     };
 
     recipesAPI.getRecipe = function(recipeId){
-      return  $http.get(host+'/recipes/' + recipeId);
+      return  $http.get(host+'/recipes/' + recipeId, { withCredentials: true });
     };
 
     recipesAPI.createRecipe = function(data){
-      return $http.post(host+'/recipes/', { 'recipe': data}, {headers: { 'Authorization': 'Token token=' + simpleStorage.get('token')}});
+      return $http.post(host+'/recipes/', { 'recipe': data}, {headers: { 'Authorization': 'Token token=' + simpleStorage.get('token')}}, { withCredentials: true });
     };
 
     recipesAPI.deleteRecipe = function(recipeId){
-      return $http.delete(host+'/recipes/' + recipeId, {headers: { Authorization: 'Token token=' + simpleStorage.get('token')}});
+      return $http.delete(host+'/recipes/' + recipeId, {headers: { Authorization: 'Token token=' + simpleStorage.get('token')}}, { withCredentials: true });
     };
 
     return recipesAPI;
